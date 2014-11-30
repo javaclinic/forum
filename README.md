@@ -95,6 +95,31 @@ INSERT INTO forum_categories (name,description) VALUES ('hibernate','Hibernate')
 ```
 
 
+## How to configure Tomcat security realm
+* Edit Tomcat default identity management configuration file, e.g. `TOMCAT_HOME/conf/tomcat-users.xml`
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tomcat-users
+  version="1.0"
+  xmlns="http://tomcat.apache.org/xml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://tomcat.apache.org/xml tomcat-users.xsd"
+>
+
+    <role rolename="FORUM_USER" />
+    <role rolename="FORUM_ADMIN" />
+
+    <user username="john" password="password" roles="FORUM_USER" />
+    <user username="jane" password="password" roles="FORUM_USER,FORUM_ADMIN" />
+    <user username="jack" password="password" roles="" />
+    <user username="jill" password="password" roles="FORUM_ADMIN" />
+
+</tomcat-users>
+```
+* Restart Tomcat
+
+
 ## How to build WAR package and deploy to Tomcat
 * `mvn clean package` - builds a war file, e.g. `target/forum.war`
 * Copy `target/forum.war` to your Tomcat deployments folder, e.g. `TOMCAT_HOME/webapps/forum.war`
@@ -106,12 +131,13 @@ INSERT INTO forum_categories (name,description) VALUES ('hibernate','Hibernate')
 
 ## How to checkout particular branch version
 * Clone the repository, e.g. `git clone git@github.com:javaclinic/forum.git` or `git clone https://github.com/javaclinic/forum.git`
-* Switch the branch, e.g. `git checkout servlets-jdbc-plain`
+* Switch the branch, e.g. `git checkout servlets-jdbc-plain-with-security`
 * Check the status, e.g. `git status`
 
 
 ## Known branches
 * [master] (https://github.com/javaclinic/forum/tree/master) Master Branch
 * [servlets-jdbc-plain] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain) Servlets, JSPs (plain), JDBC
+* [servlets-jdbc-plain-with-security] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain-with-security) Servlets, JSPs (plain), JDBC with Servlet security
 
 

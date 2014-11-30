@@ -31,4 +31,44 @@
         <welcome-file>home.html</welcome-file>
     </welcome-file-list>
 
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Admin Pages</web-resource-name>
+            <url-pattern>/category_new.html</url-pattern>
+            <url-pattern>/category_edit.html</url-pattern>
+            <url-pattern>/category_delete.html</url-pattern>
+            <url-pattern>/user_new.html</url-pattern>
+            <url-pattern>/user_edit.html</url-pattern>
+            <url-pattern>/user_delete.html</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>FORUM_ADMIN</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>User Pages</web-resource-name>
+            <url-pattern>/categories.html</url-pattern>
+            <url-pattern>/users.html</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>FORUM_USER</role-name>
+            <role-name>FORUM_ADMIN</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>Forum Administration</realm-name>
+    </login-config>
+
+    <security-role>
+        <role-name>FORUM_ADMIN</role-name>
+    </security-role>
+
+    <security-role>
+        <role-name>FORUM_USER</role-name>
+    </security-role>
+
 </web-app>
