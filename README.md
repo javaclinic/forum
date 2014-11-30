@@ -116,6 +116,8 @@ INSERT INTO forum_categories (name,description) VALUES ('hibernate','Hibernate')
 * [servlets-jdbc-plain-with-security] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain-with-security) Servlets, JSPs (plain), JDBC with Servlet security
 * [servlets-hibernate-with-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-with-xml) Servlets, JSPs (plain), Hibernate with XML
 * [servlets-hibernate-with-mixed-configuration] (https://github.com/javaclinic/forum/tree/servlets-hibernate-with-mixed-configuration) Servlets, JSPs (plain), Hibernate with mixed configuration (XML and Annotation-based)
+* [servlets-hibernate-with-annotations] (https://github.com/javaclinic/forum/tree/servlets-hibernate-with-annotations) Servlets, JSPs (plain), Hibernate with annotation-based configuration
+
 
 
 
