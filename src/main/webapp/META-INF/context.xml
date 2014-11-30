@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+    META-INF/context.xml file is Tomcat-specific deployment descriptor.
+    This file will automatically configure resource references, and other
+    Tomcat configuration options for this application.
+ -->
+ 
+<!DOCTYPE Context [ ]>
+<Context>
+
+    <!--
+      Make sure you have copied the HSQLDB JDBC driver to TOMCAT_HOME/lib folder.
+      You can download the latest driver from Maven Repository, e.g.
+        http://central.maven.org/maven2/org/hsqldb/hsqldb/2.3.2/hsqldb-2.3.2.jar
+    -->
+    <Resource
+        type="javax.sql.DataSource"
+        auth="Container"
+        name="jdbc/forum"
+        url="jdbc:hsqldb:hsql://localhost:9002/mydb"
+        username="sa"
+        password=""
+        driverClassName="org.hsqldb.jdbcDriver"
+        initialSize="5"
+        maxActive="20"
+        maxIdle="10"
+        maxWait="5000"
+        minIdle="5"
+        logAbandoned="true"
+    />
+
+</Context>
