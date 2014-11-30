@@ -106,11 +106,12 @@ INSERT INTO forum_categories (name,description) VALUES ('hibernate','Hibernate')
 
 ## How to checkout particular branch version
 * Clone the repository, e.g. `git clone git@github.com:javaclinic/forum.git` or `git clone https://github.com/javaclinic/forum.git`
-* Switch the branch, e.g. `git checkout master`
+* Switch the branch, e.g. `git checkout servlets-jdbc-plain`
 * Check the status, e.g. `git status`
 
 
 ## Known branches
 * [master] (https://github.com/javaclinic/forum/tree/master) Master Branch
+* [servlets-jdbc-plain] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain) Servlets, JSPs (plain), JDBC
 
 
