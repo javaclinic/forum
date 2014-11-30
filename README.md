@@ -113,6 +113,7 @@ INSERT INTO forum_categories (name,description) VALUES ('hibernate','Hibernate')
 ## Known branches
 * [master] (https://github.com/javaclinic/forum/tree/master) Master Branch
 * [servlets-jdbc-plain] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain) Servlets, JSPs (plain), JDBC
+* [servlets-jdbc-plain-with-security] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain-with-security) Servlets, JSPs (plain), JDBC with Servlet security
 
 
 
