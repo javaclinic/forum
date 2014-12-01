@@ -10,12 +10,12 @@
     "
 >
 
-    <bean id="userdao" class="example.forum.dao.JdbcUserDao">
-        <constructor-arg ref="datasource" />
+    <bean id="userdao" class="example.forum.dao.JdbcTemplateUserDao">
+        <property name="datasource" ref="datasource" />
     </bean>
 
-    <bean id="categorydao" class="example.forum.dao.JdbcCategoryDao">
-        <constructor-arg ref="datasource" />
+    <bean id="categorydao" class="example.forum.dao.JdbcTemplateCategoryDao">
+        <property name="datasource" ref="datasource" />
     </bean>
 
     <jee:jndi-lookup id="datasource" jndi-name="jdbc/forum" expected-type="javax.sql.DataSource" />

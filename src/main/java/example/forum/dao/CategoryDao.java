@@ -2,7 +2,8 @@ package example.forum.dao;
 
 import java.util.List;
 
-import example.forum.dao.exceptions.DataAccessException;
+import org.springframework.dao.DataAccessException;
+
 import example.forum.domain.Category;
 
 public interface CategoryDao {
