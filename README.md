@@ -93,7 +93,7 @@ INSERT INTO forum_categories (name,description) VALUES ('hibernate','Hibernate')
 
 </Context>
 ```
-
+* **NOTE** Use this context.xml only if you are configuring container(Tomcat)-managed datasource. You can safely remove this file if you are using Spring-managed datasource.
 
 ## How to build WAR package and deploy to Tomcat
 * `mvn clean package` - builds a war file, e.g. `target/forum.war`
