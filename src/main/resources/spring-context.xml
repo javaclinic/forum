@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    "
+>
+
+    <context:property-placeholder location="classpath:database.properties" />
+
+    <bean id="datasource" class="org.apache.tomcat.dbcp.dbcp.BasicDataSource">
+        <property name="driverClassName" value="${jdbc.driverClassName}" />
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+    </bean>
+
+    <bean id="userdao" class="example.forum.dao.HibernateUserDao">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+    <bean id="categorydao" class="example.forum.dao.HibernateCategoryDao">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+
+        <!-- you could use the old hibernate.cfg.xml as well -->
+        <!--
+        <property name="configLocation" value="hibernate.cfg.xml" />
+        -->
+
+        <!-- alternatively, we can define all hibernate properties in Spring configuration -->
+        <property name="dataSource" ref="datasource"/>
+        <property name="mappingResources">
+            <list>
+                <value>mappings/Category.hbm.xml</value>
+                <value>mappings/User.hbm.xml</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.connection.pool_size">10</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.current_session_context_class">thread</prop>
+                <prop key="hibernate.cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</prop>
+                <prop key="hibernate.generate_statistics">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">validate</prop>
+            </props>
+        </property>
+
+    </bean>
+
+</beans>
