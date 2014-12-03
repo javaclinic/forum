@@ -3,6 +3,10 @@
 * Good luck and have fun building it!
 
 
+## Screenshots
+* Feel free to look at [screenshots] (/screenshots.md "Forum Screenshots"). 
+
+
 ## Requirements
 * Java 1.7
 * Maven 3.x
@@ -124,6 +128,7 @@ INSERT INTO forum_categories (name,description) VALUES ('hibernate','Hibernate')
 * [servlets-hibernate-spring-with-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-xml) Servlets, JSPs (plain), Hibernate, Spring with XML configuration
 * [servlets-hibernate-spring-with-mixed-configuration] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-mixed-configuration) Servlets, JSPs (plain), JDBC, Spring with mixed XML configuration and annotations
 * [servlets-jdbc-plain-spring-no-xml] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain-spring-no-xml) Servlets, JSPs (plain), JDBC, Spring with annotations (no-XML)
+
 
 
 
