@@ -19,22 +19,16 @@
         <property name="password" value="${jdbc.password}" />
     </bean>
 
-    <bean id="userdao" class="example.forum.dao.HibernateUserDao">
-        <property name="sessionFactory" ref="sessionFactory" />
+    <bean id="userdao" class="example.forum.dao.UserDaoHibernateImpl">
+        <constructor-arg ref="sessionFactory" />
     </bean>
 
-    <bean id="categorydao" class="example.forum.dao.HibernateCategoryDao">
-        <property name="sessionFactory" ref="sessionFactory" />
+    <bean id="categorydao" class="example.forum.dao.CategoryDaoHibernateImpl">
+        <constructor-arg ref="sessionFactory" />
     </bean>
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 
-        <!-- you could use the old hibernate.cfg.xml as well -->
-        <!--
-        <property name="configLocation" value="hibernate.cfg.xml" />
-        -->
-
-        <!-- alternatively, we can define all hibernate properties in Spring configuration -->
         <property name="dataSource" ref="datasource"/>
         <property name="mappingResources">
             <list>
