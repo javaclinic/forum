@@ -10,24 +10,33 @@ import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessException;
+import org.springframework.stereotype.Component;
 
-public abstract class AbstractDao {
+/**
+ * Generic DAO class that implements most of the common CRUD methods.
+ * 
+ * @author nevenc
+ *
+ */
+@Component
+public abstract class GenericDaoHibernateImpl<T extends Serializable> {
 
     protected final Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    private Class<T> clazz;
 
     @Autowired
     private SessionFactory sessionFactory;
 
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
+    protected final void setClazz(final Class<T> clazz) {
+        this.clazz = clazz;
     }
 
-    protected Session openSession() throws HibernateException {
+    private Session openSession() throws HibernateException {
         return sessionFactory.openSession();
     }
 
-    protected Object create(Object entity) throws DataAccessException {
+    public T create(T entity) {
         try {
             Session session = this.openSession();
             try {
@@ -48,7 +57,7 @@ public abstract class AbstractDao {
         }
     }
 
-    protected Object update(Object entity) throws DataAccessException {
+    public T update(T entity) {
         try {
             Session session = this.openSession();
             try {
@@ -69,7 +78,7 @@ public abstract class AbstractDao {
         }
     }
 
-    protected Object delete(Object entity) throws DataAccessException {
+    public T delete(T entity) {
         try {
             Session session = this.openSession();
             try {
@@ -90,13 +99,14 @@ public abstract class AbstractDao {
         }
     }
 
-    protected Object findById(Class<?> clazz, Serializable id) throws DataAccessException {
+    @SuppressWarnings("unchecked")
+    public T findById(Serializable id) {
         try {
             Session session = this.openSession();
             try {
                 session.beginTransaction();
                 try {
-                    Object entity = session.get(clazz, id);
+                    T entity = (T) session.get(clazz, id);
                     session.getTransaction().commit();
                     return entity;
                 } catch (RuntimeException e) {
@@ -111,7 +121,8 @@ public abstract class AbstractDao {
         }
     }
 
-    protected Object findOne(String hqlQuery, Object... parameters) throws DataAccessException {
+    @SuppressWarnings("unchecked")
+    public T findOne(String hqlQuery, Object... parameters) {
         try {
             Session session = this.openSession();
             try {
@@ -124,7 +135,7 @@ public abstract class AbstractDao {
                         }
                     }
                     session.getTransaction().commit();
-                    return query.uniqueResult();
+                    return (T) query.uniqueResult();
                 } catch (RuntimeException e) {
                     session.getTransaction().rollback();
                     throw e;
@@ -137,7 +148,8 @@ public abstract class AbstractDao {
         }
     }
 
-    protected List<?> findAll(String hqlQuery, Object... parameters) throws DataAccessException {
+    @SuppressWarnings("unchecked")
+    public List<T> findAll(String hqlQuery, Object... parameters) {
         try {
             Session session = this.openSession();
             try {
@@ -159,6 +171,7 @@ public abstract class AbstractDao {
                 if ( session != null ) session.close();
             }
         } catch (RuntimeException e) {
+            e.printStackTrace();
             throw new RuntimeException("Could not find all entities entity: " + hqlQuery + " due to: " + e);
         }
     }
