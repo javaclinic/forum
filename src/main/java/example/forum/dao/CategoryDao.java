@@ -1,7 +1,5 @@
 package example.forum.dao;
 
-import java.util.List;
-
 import example.forum.domain.Category;
 
 /**
@@ -10,11 +8,6 @@ import example.forum.domain.Category;
  * @author nevenc
  *
  */
-public interface CategoryDao {
-    Category create(Category category);
-    Category update(Category category);
-    Category delete(Category category);
-    Category findById(Long id);
+public interface CategoryDao extends GenericDao<Category> {
     Category findByName(String name);
-    List<Category> findAll();
 }
