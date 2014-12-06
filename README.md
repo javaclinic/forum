@@ -110,9 +110,9 @@ INSERT INTO forum_categories (name,description) VALUES ('hibernate','Hibernate')
 
 ## How to checkout particular branch version
 * We use `master` branch for documentation, and various other branches for various versions of the technolgoy used to implement the same set of functionalities.
-* If you want to play with specific technology set, please checkout particular branch, e.g. `servlets-hibernate-plain-spring-transactions-no-xml`
+* If you want to play with specific technology set, please checkout particular branch, e.g. `servlets-hibernate-spring-transactions-no-xml`
 * Clone the repository, e.g. `git clone git@github.com:javaclinic/forum.git` or `git clone https://github.com/javaclinic/forum.git`
-* Switch the branch, e.g. `git checkout servlets-hibernate-plain-spring-transactions-no-xml`
+* Switch the branch, e.g. `git checkout servlets-hibernate-spring-transactions-no-xml`
 * Check the status, e.g. `git status`
 
 
@@ -140,12 +140,12 @@ INSERT INTO forum_categories (name,description) VALUES ('hibernate','Hibernate')
 * Servlets + Hibernate + Spring
   * [servlets-hibernate-spring-with-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-xml) Servlets, JSPs (plain), Hibernate, Spring with XML configuration
   * [servlets-hibernate-spring-with-mixed-configuration] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-mixed-configuration) Servlets, JSPs (plain), Hibernate, Spring with mixed XML configuration and annotations
-  * [servlets-hibernate-plain-spring-no-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-plain-spring-no-xml) Servlets, JSPs (plain), Hibernate, Spring with annotations (no-XML)
+  * [servlets-hibernate-spring-no-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-no-xml) Servlets, JSPs (plain), Hibernate, Spring with annotations (no-XML)
 
 * Servlets + Hibernate + Spring + Transactions
   * [servlets-hibernate-spring-transactions-with-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-xml) Servlets, JSPs (plain), Hibernate, Spring with XML configuration, Spring Transactions
   * [servlets-hibernate-spring-transactions-with-mixed-configuration] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-mixed-configuration) Servlets, JSPs (plain), Hibernate, Spring with mixed XML configuration and annotations, Spring Transactions
-  * [servlets-hibernate-plain-spring-transactions-no-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-no-xml) Servlets, JSPs (plain), Hibernate, Spring with annotations (no-XML), Spring Transactions
+  * [servlets-hibernate-spring-transactions-no-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-no-xml) Servlets, JSPs (plain), Hibernate, Spring with annotations (no-XML), Spring Transactions
 
 
 * Here's a list of all branches with various features:
