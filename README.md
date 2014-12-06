@@ -140,31 +140,32 @@ INSERT INTO forum_categories (name,description) VALUES ('hibernate','Hibernate')
 * Servlets + Hibernate + Spring
   * [servlets-hibernate-spring-with-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-xml) Servlets, JSPs (plain), Hibernate, Spring with XML configuration
   * [servlets-hibernate-spring-with-mixed-configuration] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-mixed-configuration) Servlets, JSPs (plain), Hibernate, Spring with mixed XML configuration and annotations
-  * [servlets-hibernate-plain-spring-no-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-plain-spring-no-xml) Servlets, JSPs (plain), Hibernate, Spring with annotations (no-XML)
+  * [servlets-hibernate-spring-no-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-no-xml) Servlets, JSPs (plain), Hibernate, Spring with annotations (no-XML)
 
 * Servlets + Hibernate + Spring + Transactions
   * [servlets-hibernate-spring-transactions-with-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-transactions-with-xml) Servlets, JSPs (plain), Hibernate, Spring with XML configuration, Spring Transactions
   * [servlets-hibernate-spring-transactions-with-mixed-configuration] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-transactions-with-mixed-configuration) Servlets, JSPs (plain), Hibernate, Spring with mixed XML configuration and annotations, Spring Transactions
-  * [servlets-hibernate-plain-spring-transactions-no-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-transactions-no-xml) Servlets, JSPs (plain), Hibernate, Spring with annotations (no-XML), Spring Transactions
+  * [servlets-hibernate-spring-transactions-no-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-transactions-no-xml) Servlets, JSPs (plain), Hibernate, Spring with annotations (no-XML), Spring Transactions
 
 
-* Here's an alphabetical list of all branches with various features:
+* Here's a list of all branches with various features:
 
   ```
-  servlets-hibernate-spring-no-xml
-  servlets-hibernate-spring-transactions-no-xml
-  servlets-hibernate-spring-transactions-with-mixed-configuration
-  servlets-hibernate-spring-transactions-with-xml
-  servlets-hibernate-spring-with-mixed-configuration
-  servlets-hibernate-spring-with-xml
-  servlets-hibernate-with-annotations
-  servlets-hibernate-with-mixed-configuration
-  servlets-hibernate-with-xml
   servlets-jdbc-plain
-  servlets-jdbc-plain-spring-no-xml
-  servlets-jdbc-plain-spring-with-mixed-configuration
-  servlets-jdbc-plain-spring-with-xml
   servlets-jdbc-plain-with-security
+  servlets-hibernate-with-xml
+  servlets-hibernate-with-mixed-configuration
+  servlets-hibernate-with-annotations
   servlets-jpa-plain
+  servlets-jdbc-plain-spring-with-xml
+  servlets-jdbc-plain-spring-with-mixed-configuration
+  servlets-jdbc-plain-spring-no-xml
+  servlets-hibernate-spring-with-xml
+  servlets-hibernate-spring-with-mixed-configuration
+  servlets-hibernate-spring-no-xml
+  servlets-hibernate-spring-transactions-with-xml
+  servlets-hibernate-spring-transactions-with-mixed-configuration
+  servlets-hibernate-spring-transactions-no-xml
+
   ```
 
