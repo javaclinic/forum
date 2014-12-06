@@ -1,0 +1,23 @@
+# Forum Screenshots
+
+![01](/../screenshots/screenshots/01_home.png?raw=true "01")
+![02](/../screenshots/screenshots/02_user_list.png?raw=true "02")
+![03](/../screenshots/screenshots/03_user_save_form_empty.png?raw=true "03")
+![04](/../screenshots/screenshots/04_user_save_form_validation_all_empty.png?raw=true "04")
+![05](/../screenshots/screenshots/05_user_save_form_validation_password.png?raw=true "05")
+![06](/../screenshots/screenshots/06_user_save_form_validation_password_verification.png?raw=true "06")
+![07](/../screenshots/screenshots/07_user_save_form_validation_password_do_not_match.png?raw=true "07")
+![08](/../screenshots/screenshots/08_user_save_created.png?raw=true "08")
+![09](/../screenshots/screenshots/09_user_edit_form.png?raw=true "09")
+![10](/../screenshots/screenshots/10_user_edit_updated.png?raw=true "10")
+![11](/../screenshots/screenshots/11_user_list_again.png?raw=true "11")
+![12](/../screenshots/screenshots/12_user_save_duplicate.png?raw=true "12")
+![13](/../screenshots/screenshots/13_user_save_duplicate_error.png?raw=true "13")
+![14](/../screenshots/screenshots/14_category_list.png?raw=true "14")
+![15](/../screenshots/screenshots/15_category_save_form_empty.png?raw=true "15")
+![16](/../screenshots/screenshots/16_category_save_form_filled.png?raw=true "16")
+![17](/../screenshots/screenshots/17_category_save_created.png?raw=true "17")
+![18](/../screenshots/screenshots/18_category_list_again.png?raw=true "18")
+![19](/../screenshots/screenshots/19_category_save_duplicate.png?raw=true "19")
+![20](/../screenshots/screenshots/20_category_save_duplicate_error.png?raw=true "20")
+
