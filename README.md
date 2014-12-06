@@ -109,30 +109,61 @@ INSERT INTO forum_categories (name,description) VALUES ('hibernate','Hibernate')
 
 
 ## How to checkout particular branch version
+* We use `master` branch for documentation, and various other branches for various versions of the technolgoy used to implement the same set of functionalities.
+* If you want to play with specific technology set, please checkout particular branch, e.g. `servlets-hibernate-plain-spring-transactions-no-xml`
 * Clone the repository, e.g. `git clone git@github.com:javaclinic/forum.git` or `git clone https://github.com/javaclinic/forum.git`
-* Switch the branch, e.g. `git checkout master`
+* Switch the branch, e.g. `git checkout servlets-hibernate-plain-spring-transactions-no-xml`
 * Check the status, e.g. `git status`
 
 
 ## Known branches
-* [master] (https://github.com/javaclinic/forum/tree/master) Master Branch
-* [servlets-jdbc-plain] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain) Servlets, JSPs (plain), JDBC
-* [servlets-jdbc-plain-with-security] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain-with-security) Servlets, JSPs (plain), JDBC with Servlet security
-* [servlets-hibernate-with-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-with-xml) Servlets, JSPs (plain), Hibernate with XML
-* [servlets-hibernate-with-mixed-configuration] (https://github.com/javaclinic/forum/tree/servlets-hibernate-with-mixed-configuration) Servlets, JSPs (plain), Hibernate with mixed configuration (XML and Annotation-based)
-* [servlets-hibernate-with-annotations] (https://github.com/javaclinic/forum/tree/servlets-hibernate-with-annotations) Servlets, JSPs (plain), Hibernate with annotation-based configuration
-* [servlets-jpa-plain] (https://github.com/javaclinic/forum/tree/servlets-jpa-plain) Servlets, JSPs (plain), JPA
-* [servlets-jdbc-plain-spring-with-xml] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain-spring-with-xml) Servlets, JSPs (plain), JDBC, Spring with XML configuration
-* [servlets-jdbc-plain-spring-with-mixed-configuration] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain-spring-with-mixed-configuration) Servlets, JSPs (plain), JDBC, Spring with mixed XML configuration and annotations
-* [servlets-jdbc-plain-spring-no-xml] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain-spring-no-xml) Servlets, JSPs (plain), JDBC, Spring with annotations (no-XML)
-* [servlets-hibernate-spring-with-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-xml) Servlets, JSPs (plain), Hibernate, Spring with XML configuration
-* [servlets-hibernate-spring-with-mixed-configuration] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-mixed-configuration) Servlets, JSPs (plain), JDBC, Spring with mixed XML configuration and annotations
-* [servlets-jdbc-plain-spring-no-xml] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain-spring-no-xml) Servlets, JSPs (plain), JDBC, Spring with annotations (no-XML)
-* [servlets-hibernate-spring-transactions-with-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-xml) Servlets, JSPs (plain), Hibernate, Spring with XML configuration, Spring Transactions
-* [servlets-hibernate-spring-transactions-with-mixed-configuration] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-mixed-configuration) Servlets, JSPs (plain), JDBC, Spring with mixed XML configuration and annotations, Spring Transactions
-* [servlets-jdbc-plain-spring-transactions-no-xml] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain-spring-no-xml) Servlets, JSPs (plain), JDBC, Spring with annotations (no-XML), Spring Transactions
+
+* Master (documentation)
+  * [master] (https://github.com/javaclinic/forum/tree/master) Master Branch
+  * [screenshots] (https://github.com/javaclinic/forum/tree/screenshots) Screenshots for the application
+
+* Servlets + JDBC
+  * [servlets-jdbc-plain] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain) Servlets, JSPs (plain), JDBC
+  * [servlets-jdbc-plain-with-security] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain-with-security) Servlets, JSPs (plain), JDBC with Servlet security
+
+* Servlets + Hibernate
+  * [servlets-hibernate-with-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-with-xml) Servlets, JSPs (plain), Hibernate with XML
+  * [servlets-hibernate-with-mixed-configuration] (https://github.com/javaclinic/forum/tree/servlets-hibernate-with-mixed-configuration) Servlets, JSPs (plain), Hibernate with mixed configuration (XML and Annotation-based)
+  * [servlets-hibernate-with-annotations] (https://github.com/javaclinic/forum/tree/servlets-hibernate-with-annotations) Servlets, JSPs (plain), Hibernate with annotation-based configuration
+  * [servlets-jpa-plain] (https://github.com/javaclinic/forum/tree/servlets-jpa-plain) Servlets, JSPs (plain), JPA
+
+* Servlets + JDBC + Spring
+  * [servlets-jdbc-plain-spring-with-xml] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain-spring-with-xml) Servlets, JSPs (plain), JDBC, Spring with XML configuration
+  * [servlets-jdbc-plain-spring-with-mixed-configuration] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain-spring-with-mixed-configuration) Servlets, JSPs (plain), JDBC, Spring with mixed XML configuration and annotations
+  * [servlets-jdbc-plain-spring-no-xml] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain-spring-no-xml) Servlets, JSPs (plain), JDBC, Spring with annotations (no-XML)
+
+* Servlets + Hibernate + Spring
+  * [servlets-hibernate-spring-with-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-xml) Servlets, JSPs (plain), Hibernate, Spring with XML configuration
+  * [servlets-hibernate-spring-with-mixed-configuration] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-mixed-configuration) Servlets, JSPs (plain), Hibernate, Spring with mixed XML configuration and annotations
+  * [servlets-hibernate-plain-spring-no-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-plain-spring-no-xml) Servlets, JSPs (plain), Hibernate, Spring with annotations (no-XML)
+
+* Servlets + Hibernate + Spring + Transactions
+  * [servlets-hibernate-spring-transactions-with-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-xml) Servlets, JSPs (plain), Hibernate, Spring with XML configuration, Spring Transactions
+  * [servlets-hibernate-spring-transactions-with-mixed-configuration] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-mixed-configuration) Servlets, JSPs (plain), Hibernate, Spring with mixed XML configuration and annotations, Spring Transactions
+  * [servlets-hibernate-plain-spring-transactions-no-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-no-xml) Servlets, JSPs (plain), Hibernate, Spring with annotations (no-XML), Spring Transactions
 
 
-
-
+* Here's an alphabetical list of all branches with various features:
+```
+servlets-hibernate-spring-no-xml
+servlets-hibernate-spring-transactions-no-xml
+servlets-hibernate-spring-transactions-with-mixed-configuration
+servlets-hibernate-spring-with-mixed-configuration
+servlets-hibernate-spring-with-xml
+servlets-hibernate-transactions-with-xml
+servlets-hibernate-with-annotations
+servlets-hibernate-with-mixed-configuration
+servlets-hibernate-with-xml
+servlets-jdbc-plain
+servlets-jdbc-plain-spring-no-xml
+servlets-jdbc-plain-spring-with-mixed-configuration
+servlets-jdbc-plain-spring-with-xml
+servlets-jdbc-plain-with-security
+servlets-jpa-plain
+```
 
