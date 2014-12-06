@@ -143,9 +143,9 @@ INSERT INTO forum_categories (name,description) VALUES ('hibernate','Hibernate')
   * [servlets-hibernate-plain-spring-no-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-plain-spring-no-xml) Servlets, JSPs (plain), Hibernate, Spring with annotations (no-XML)
 
 * Servlets + Hibernate + Spring + Transactions
-  * [servlets-hibernate-spring-transactions-with-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-xml) Servlets, JSPs (plain), Hibernate, Spring with XML configuration, Spring Transactions
-  * [servlets-hibernate-spring-transactions-with-mixed-configuration] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-mixed-configuration) Servlets, JSPs (plain), Hibernate, Spring with mixed XML configuration and annotations, Spring Transactions
-  * [servlets-hibernate-plain-spring-transactions-no-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-no-xml) Servlets, JSPs (plain), Hibernate, Spring with annotations (no-XML), Spring Transactions
+  * [servlets-hibernate-spring-transactions-with-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-transactions-with-xml) Servlets, JSPs (plain), Hibernate, Spring with XML configuration, Spring Transactions
+  * [servlets-hibernate-spring-transactions-with-mixed-configuration] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-transactions-with-mixed-configuration) Servlets, JSPs (plain), Hibernate, Spring with mixed XML configuration and annotations, Spring Transactions
+  * [servlets-hibernate-plain-spring-transactions-no-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-transactions-no-xml) Servlets, JSPs (plain), Hibernate, Spring with annotations (no-XML), Spring Transactions
 
 
 * Here's an alphabetical list of all branches with various features:
@@ -154,9 +154,9 @@ INSERT INTO forum_categories (name,description) VALUES ('hibernate','Hibernate')
   servlets-hibernate-spring-no-xml
   servlets-hibernate-spring-transactions-no-xml
   servlets-hibernate-spring-transactions-with-mixed-configuration
+  servlets-hibernate-spring-transactions-with-xml
   servlets-hibernate-spring-with-mixed-configuration
   servlets-hibernate-spring-with-xml
-  servlets-hibernate-transactions-with-xml
   servlets-hibernate-with-annotations
   servlets-hibernate-with-mixed-configuration
   servlets-hibernate-with-xml
@@ -167,5 +167,4 @@ INSERT INTO forum_categories (name,description) VALUES ('hibernate','Hibernate')
   servlets-jdbc-plain-with-security
   servlets-jpa-plain
   ```
-
 
