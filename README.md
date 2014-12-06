@@ -3,6 +3,10 @@
 * Good luck and have fun building it!
 
 
+## Screenshots
+* Feel free to look at [screenshots] (/screenshots.md "Forum Screenshots"). 
+
+
 ## Requirements
 * Java 1.7
 * Maven 3.x
@@ -93,7 +97,7 @@ INSERT INTO forum_categories (name,description) VALUES ('hibernate','Hibernate')
 
 </Context>
 ```
-* **NOTE** Use this context.xml only if you are configuring container(Tomcat)-managed datasource. You can safely remove this file if you are using Spring-managed datasource.
+
 
 ## How to build WAR package and deploy to Tomcat
 * `mvn clean package` - builds a war file, e.g. `target/forum.war`
@@ -121,6 +125,14 @@ INSERT INTO forum_categories (name,description) VALUES ('hibernate','Hibernate')
 * [servlets-jdbc-plain-spring-with-xml] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain-spring-with-xml) Servlets, JSPs (plain), JDBC, Spring with XML configuration
 * [servlets-jdbc-plain-spring-with-mixed-configuration] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain-spring-with-mixed-configuration) Servlets, JSPs (plain), JDBC, Spring with mixed XML configuration and annotations
 * [servlets-jdbc-plain-spring-no-xml] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain-spring-no-xml) Servlets, JSPs (plain), JDBC, Spring with annotations (no-XML)
+* [servlets-hibernate-spring-with-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-xml) Servlets, JSPs (plain), Hibernate, Spring with XML configuration
+* [servlets-hibernate-spring-with-mixed-configuration] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-mixed-configuration) Servlets, JSPs (plain), JDBC, Spring with mixed XML configuration and annotations
+* [servlets-jdbc-plain-spring-no-xml] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain-spring-no-xml) Servlets, JSPs (plain), JDBC, Spring with annotations (no-XML)
+* [servlets-hibernate-spring-transactions-with-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-xml) Servlets, JSPs (plain), Hibernate, Spring with XML configuration, Spring Transactions
+* [servlets-hibernate-spring-transactions-with-mixed-configuration] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-mixed-configuration) Servlets, JSPs (plain), JDBC, Spring with mixed XML configuration and annotations, Spring Transactions
+* [servlets-jdbc-plain-spring-transactions-no-xml] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain-spring-no-xml) Servlets, JSPs (plain), JDBC, Spring with annotations (no-XML), Spring Transactions
+
+
 
 
 
