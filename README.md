@@ -3,6 +3,10 @@
 * Good luck and have fun building it!
 
 
+## Screenshots
+* Feel free to look at [screenshots] (/screenshots.md "Forum Screenshots"). 
+
+
 ## Requirements
 * Java 1.7
 * Maven 3.x
@@ -95,31 +99,6 @@ INSERT INTO forum_categories (name,description) VALUES ('hibernate','Hibernate')
 ```
 
 
-## How to configure Tomcat security realm
-* Edit Tomcat default identity management configuration file, e.g. `TOMCAT_HOME/conf/tomcat-users.xml`
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-
-<tomcat-users
-  version="1.0"
-  xmlns="http://tomcat.apache.org/xml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://tomcat.apache.org/xml tomcat-users.xsd"
->
-
-    <role rolename="FORUM_USER" />
-    <role rolename="FORUM_ADMIN" />
-
-    <user username="john" password="password" roles="FORUM_USER" />
-    <user username="jane" password="password" roles="FORUM_USER,FORUM_ADMIN" />
-    <user username="jack" password="password" roles="" />
-    <user username="jill" password="password" roles="FORUM_ADMIN" />
-
-</tomcat-users>
-```
-* Restart Tomcat
-
-
 ## How to build WAR package and deploy to Tomcat
 * `mvn clean package` - builds a war file, e.g. `target/forum.war`
 * Copy `target/forum.war` to your Tomcat deployments folder, e.g. `TOMCAT_HOME/webapps/forum.war`
@@ -130,14 +109,62 @@ INSERT INTO forum_categories (name,description) VALUES ('hibernate','Hibernate')
 
 
 ## How to checkout particular branch version
+* We use `master` branch for documentation, and various other branches for various versions of the technolgoy used to implement the same set of functionalities.
+* If you want to play with specific technology set, please checkout particular branch, e.g. `servlets-hibernate-plain-spring-transactions-no-xml`
 * Clone the repository, e.g. `git clone git@github.com:javaclinic/forum.git` or `git clone https://github.com/javaclinic/forum.git`
-* Switch the branch, e.g. `git checkout servlets-jdbc-plain-with-security`
+* Switch the branch, e.g. `git checkout servlets-hibernate-plain-spring-transactions-no-xml`
 * Check the status, e.g. `git status`
 
 
 ## Known branches
-* [master] (https://github.com/javaclinic/forum/tree/master) Master Branch
-* [servlets-jdbc-plain] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain) Servlets, JSPs (plain), JDBC
-* [servlets-jdbc-plain-with-security] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain-with-security) Servlets, JSPs (plain), JDBC with Servlet security
 
+* Master (documentation)
+  * [master] (https://github.com/javaclinic/forum/tree/master) Master Branch
+  * [screenshots] (https://github.com/javaclinic/forum/tree/screenshots) Screenshots for the application
+
+* Servlets + JDBC
+  * [servlets-jdbc-plain] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain) Servlets, JSPs (plain), JDBC
+  * [servlets-jdbc-plain-with-security] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain-with-security) Servlets, JSPs (plain), JDBC with Servlet security
+
+* Servlets + Hibernate
+  * [servlets-hibernate-with-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-with-xml) Servlets, JSPs (plain), Hibernate with XML
+  * [servlets-hibernate-with-mixed-configuration] (https://github.com/javaclinic/forum/tree/servlets-hibernate-with-mixed-configuration) Servlets, JSPs (plain), Hibernate with mixed configuration (XML and Annotation-based)
+  * [servlets-hibernate-with-annotations] (https://github.com/javaclinic/forum/tree/servlets-hibernate-with-annotations) Servlets, JSPs (plain), Hibernate with annotation-based configuration
+  * [servlets-jpa-plain] (https://github.com/javaclinic/forum/tree/servlets-jpa-plain) Servlets, JSPs (plain), JPA
+
+* Servlets + JDBC + Spring
+  * [servlets-jdbc-plain-spring-with-xml] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain-spring-with-xml) Servlets, JSPs (plain), JDBC, Spring with XML configuration
+  * [servlets-jdbc-plain-spring-with-mixed-configuration] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain-spring-with-mixed-configuration) Servlets, JSPs (plain), JDBC, Spring with mixed XML configuration and annotations
+  * [servlets-jdbc-plain-spring-no-xml] (https://github.com/javaclinic/forum/tree/servlets-jdbc-plain-spring-no-xml) Servlets, JSPs (plain), JDBC, Spring with annotations (no-XML)
+
+* Servlets + Hibernate + Spring
+  * [servlets-hibernate-spring-with-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-xml) Servlets, JSPs (plain), Hibernate, Spring with XML configuration
+  * [servlets-hibernate-spring-with-mixed-configuration] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-mixed-configuration) Servlets, JSPs (plain), Hibernate, Spring with mixed XML configuration and annotations
+  * [servlets-hibernate-plain-spring-no-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-plain-spring-no-xml) Servlets, JSPs (plain), Hibernate, Spring with annotations (no-XML)
+
+* Servlets + Hibernate + Spring + Transactions
+  * [servlets-hibernate-spring-transactions-with-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-xml) Servlets, JSPs (plain), Hibernate, Spring with XML configuration, Spring Transactions
+  * [servlets-hibernate-spring-transactions-with-mixed-configuration] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-with-mixed-configuration) Servlets, JSPs (plain), Hibernate, Spring with mixed XML configuration and annotations, Spring Transactions
+  * [servlets-hibernate-plain-spring-transactions-no-xml] (https://github.com/javaclinic/forum/tree/servlets-hibernate-spring-no-xml) Servlets, JSPs (plain), Hibernate, Spring with annotations (no-XML), Spring Transactions
+
+
+* Here's an alphabetical list of all branches with various features:
+
+  ```
+  servlets-hibernate-spring-no-xml
+  servlets-hibernate-spring-transactions-no-xml
+  servlets-hibernate-spring-transactions-with-mixed-configuration
+  servlets-hibernate-spring-with-mixed-configuration
+  servlets-hibernate-spring-with-xml
+  servlets-hibernate-transactions-with-xml
+  servlets-hibernate-with-annotations
+  servlets-hibernate-with-mixed-configuration
+  servlets-hibernate-with-xml
+  servlets-jdbc-plain
+  servlets-jdbc-plain-spring-no-xml
+  servlets-jdbc-plain-spring-with-mixed-configuration
+  servlets-jdbc-plain-spring-with-xml
+  servlets-jdbc-plain-with-security
+  servlets-jpa-plain
+  ```
 
