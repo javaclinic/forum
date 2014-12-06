@@ -149,21 +149,22 @@ INSERT INTO forum_categories (name,description) VALUES ('hibernate','Hibernate')
 
 
 * Here's an alphabetical list of all branches with various features:
-```
-servlets-hibernate-spring-no-xml
-servlets-hibernate-spring-transactions-no-xml
-servlets-hibernate-spring-transactions-with-mixed-configuration
-servlets-hibernate-spring-with-mixed-configuration
-servlets-hibernate-spring-with-xml
-servlets-hibernate-transactions-with-xml
-servlets-hibernate-with-annotations
-servlets-hibernate-with-mixed-configuration
-servlets-hibernate-with-xml
-servlets-jdbc-plain
-servlets-jdbc-plain-spring-no-xml
-servlets-jdbc-plain-spring-with-mixed-configuration
-servlets-jdbc-plain-spring-with-xml
-servlets-jdbc-plain-with-security
-servlets-jpa-plain
-```
+
+  ```
+  servlets-hibernate-spring-no-xml
+  servlets-hibernate-spring-transactions-no-xml
+  servlets-hibernate-spring-transactions-with-mixed-configuration
+  servlets-hibernate-spring-with-mixed-configuration
+  servlets-hibernate-spring-with-xml
+  servlets-hibernate-transactions-with-xml
+  servlets-hibernate-with-annotations
+  servlets-hibernate-with-mixed-configuration
+  servlets-hibernate-with-xml
+  servlets-jdbc-plain
+  servlets-jdbc-plain-spring-no-xml
+  servlets-jdbc-plain-spring-with-mixed-configuration
+  servlets-jdbc-plain-spring-with-xml
+  servlets-jdbc-plain-with-security
+  servlets-jpa-plain
+  ```
 
