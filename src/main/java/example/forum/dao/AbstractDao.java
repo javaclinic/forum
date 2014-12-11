@@ -41,9 +41,6 @@ public abstract class AbstractDao {
             // Database connection settings
             configuration.setProperty("hibernate.connection.datasource", "java:comp/env/jdbc/forum");
 
-            // JDBC connection pool (use the built-in) 
-            configuration.setProperty("hibernate.connection.pool_size", "10");
-
             // SQL dialect
             configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.HSQLDialect");
 
@@ -57,7 +54,7 @@ public abstract class AbstractDao {
             configuration.setProperty("hibernate.cache.provider_class", "org.hibernate.cache.internal.NoCacheProvider");
 
             // Enable monitoring of our SessionFactory -->
-            configuration.setProperty("hibernate.generate_statistics", "true");
+            configuration.setProperty("hibernate.generate_statistics", "false");
 
             // Validate the database schema on startup -->
             configuration.setProperty("hibernate.hbm2ddl.auto", "validate");
