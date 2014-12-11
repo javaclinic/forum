@@ -12,11 +12,9 @@
         <property name="hibernate.connection.url">jdbc:hsqldb:hsql://localhost:9002/mydb</property>
         <property name="hibernate.connection.username">sa</property>
         <property name="hibernate.connection.password"></property>
+        <property name="hibernate.connection.pool_size">10</property>
         -->
         <property name="hibernate.connection.datasource">java:comp/env/jdbc/forum</property>
-
-        <!-- JDBC connection pool (use the built-in) -->
-        <property name="hibernate.connection.pool_size">10</property>
 
         <!-- SQL dialect -->
         <property name="hibernate.dialect">org.hibernate.dialect.HSQLDialect</property>
@@ -31,7 +29,7 @@
         <property name="hibernate.cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
 
         <!-- Enable monitoring of our SessionFactory -->
-        <property name="hibernate.generate_statistics"></property>
+        <property name="hibernate.generate_statistics">false</property>
 
         <!-- Validate the database schema on startup -->
         <property name="hibernate.hbm2ddl.auto">validate</property>
