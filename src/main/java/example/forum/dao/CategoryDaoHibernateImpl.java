@@ -11,7 +11,6 @@ import example.forum.domain.Category;
 public class CategoryDaoHibernateImpl extends GenericDaoHibernateImpl<Category> implements CategoryDao  {
 
     public CategoryDaoHibernateImpl() {
-        super();
         setClazz(Category.class);
     }
 

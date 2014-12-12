@@ -11,7 +11,6 @@ import example.forum.domain.User;
 public class UserDaoHibernateImpl extends GenericDaoHibernateImpl<User> implements UserDao  {
 
     public UserDaoHibernateImpl() {
-        super();
         setClazz(User.class);
     }
 
