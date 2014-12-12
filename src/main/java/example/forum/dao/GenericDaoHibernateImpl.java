@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @author nevenc
  *
  */
-@Transactional(readOnly=true)
+@Transactional(readOnly = true)
 public abstract class GenericDaoHibernateImpl<T extends Serializable> {
 
     protected final Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -35,74 +35,49 @@ public abstract class GenericDaoHibernateImpl<T extends Serializable> {
         return sessionFactory.getCurrentSession();
     }
 
-    @Transactional(readOnly=false)
+    @Transactional(readOnly = false)
     public T create(T entity) {
-        try {
-            this.getCurrentSession().save(entity);
-            return entity;
-        } catch (RuntimeException e) {
-            throw new RuntimeException("Could not create entity: " + entity + " due to: " + e);
-        }
+        this.getCurrentSession().save(entity);
+        return entity;
     }
 
-    @Transactional(readOnly=false)
+    @Transactional(readOnly = false)
     public T update(T entity) {
-        try {
-            this.getCurrentSession().update(entity);
-            return entity;
-        } catch (RuntimeException e) {
-            throw new RuntimeException("Could not update entity: " + entity + " due to: " + e);
-        }
+        this.getCurrentSession().update(entity);
+        return entity;
     }
 
-    @Transactional(readOnly=false)
+    @Transactional(readOnly = false)
     public T delete(T entity) {
-        try {
-            this.getCurrentSession().delete(entity);
-            return entity;
-        } catch (RuntimeException e) {
-            throw new RuntimeException("Could not delete entity: " + entity + " due to: " + e);
-        }
+        this.getCurrentSession().delete(entity);
+        return entity;
     }
 
     @SuppressWarnings("unchecked")
     public T findById(Serializable id) {
-        try {
-            return (T) this.getCurrentSession().get(clazz, id);
-        } catch (RuntimeException e) {
-            throw new RuntimeException("Could not find entity by id=" + id + " due to: " + e);
-        }
+        return (T) this.getCurrentSession().get(clazz, id);
     }
 
     @SuppressWarnings("unchecked")
     public T findOne(String hqlQuery, Object... parameters) {
-        try {
-            Query query = this.getCurrentSession().createQuery(hqlQuery);
-            if ( parameters != null ) {
-                for (int i=0; i<parameters.length; i++) {
-                    query.setParameter(i, parameters[i]);
-                }
+        Query query = this.getCurrentSession().createQuery(hqlQuery);
+        if (parameters != null) {
+            for (int i = 0; i < parameters.length; i++) {
+                query.setParameter(i, parameters[i]);
             }
-            return (T) query.uniqueResult();
-        } catch (RuntimeException e) {
-            throw new RuntimeException("Could not find an entity: " + hqlQuery + " due to: " + e);
         }
+        return (T) query.uniqueResult();
     }
 
     @SuppressWarnings("unchecked")
     public List<T> findAll(String hqlQuery, Object... parameters) {
-        try {
-            Query query = this.getCurrentSession().createQuery(hqlQuery);
-            if ( parameters != null ) {
-                for (int i=0; i<parameters.length; i++) {
-                    query.setParameter(i, parameters[i]);
-                }
+        Query query = this.getCurrentSession().createQuery(hqlQuery);
+        if (parameters != null) {
+            for (int i = 0; i < parameters.length; i++) {
+                query.setParameter(i, parameters[i]);
             }
-            return query.list();
-        } catch (RuntimeException e) {
-            e.printStackTrace();
-            throw new RuntimeException("Could not find all entities entity: " + hqlQuery + " due to: " + e);
         }
+        return query.list();
     }
 
 }
