@@ -24,11 +24,11 @@
     </bean>
 
     <bean id="userdao" class="example.forum.dao.UserDaoHibernateImpl">
-        <constructor-arg ref="sessionFactory" />
+        <property name="sessionFactory" ref="sessionFactory" />
     </bean>
 
     <bean id="categorydao" class="example.forum.dao.CategoryDaoHibernateImpl">
-        <constructor-arg ref="sessionFactory" />
+        <property name="sessionFactory" ref="sessionFactory" />
     </bean>
 
     <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
@@ -63,7 +63,7 @@
     </tx:advice>
 
     <aop:config>
-        <aop:pointcut id="daoOperation" expression="execution(* example.forum.dao.*HibernateImpl.*(..))"/>
+        <aop:pointcut id="daoOperation" expression="execution(* example.forum.dao.*.*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="daoOperation"/>
     </aop:config>
 

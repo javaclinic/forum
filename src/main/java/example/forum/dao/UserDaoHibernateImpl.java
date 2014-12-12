@@ -2,15 +2,14 @@ package example.forum.dao;
 
 import java.util.List;
 
-import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Repository;
 
 import example.forum.domain.User;
 
+@Repository
 public class UserDaoHibernateImpl extends GenericDaoHibernateImpl<User> implements UserDao  {
 
-    public UserDaoHibernateImpl(SessionFactory sessionFactory) {
-        super();
-        this.sessionFactory = sessionFactory;
+    public UserDaoHibernateImpl() {
         setClazz(User.class);
     }
 

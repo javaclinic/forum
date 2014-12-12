@@ -3,7 +3,6 @@ package example.forum.dao;
 import java.io.Serializable;
 import java.util.List;
 
-import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -22,154 +21,60 @@ public abstract class GenericDaoHibernateImpl<T extends Serializable> {
 
     private Class<T> clazz;
 
-    protected SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
+
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
     protected final void setClazz(final Class<T> clazz) {
         this.clazz = clazz;
     }
 
-    private Session openSession() throws HibernateException {
-        return sessionFactory.openSession();
+    protected final Session getCurrentSession() {
+        return sessionFactory.getCurrentSession();
     }
 
     public T create(T entity) {
-        try {
-            Session session = this.openSession();
-            try {
-                session.beginTransaction();
-                try {
-                    session.save(entity);
-                    session.getTransaction().commit();
-                    return entity;
-                } catch (RuntimeException e) {
-                    session.getTransaction().rollback();
-                    throw e;
-                }
-            } finally {
-                if ( session != null ) session.close();
-            }
-        } catch (RuntimeException e) {
-            throw new RuntimeException("Could not create entity: " + entity + " due to: " + e);
-        }
+        this.getCurrentSession().save(entity);
+        return entity;
     }
 
     public T update(T entity) {
-        try {
-            Session session = this.openSession();
-            try {
-                session.beginTransaction();
-                try {
-                    session.update(entity);
-                    session.getTransaction().commit();
-                    return entity;
-                } catch (RuntimeException e) {
-                    session.getTransaction().rollback();
-                    throw e;
-                }
-            } finally {
-                if ( session != null ) session.close();
-            }
-        } catch (RuntimeException e) {
-            throw new RuntimeException("Could not update entity: " + entity + " due to: " + e);
-        }
+        this.getCurrentSession().update(entity);
+        return entity;
     }
 
     public T delete(T entity) {
-        try {
-            Session session = this.openSession();
-            try {
-                session.beginTransaction();
-                try {
-                    session.delete(entity);
-                    session.getTransaction().commit();
-                    return entity;
-                } catch (RuntimeException e) {
-                    session.getTransaction().rollback();
-                    throw e;
-                }
-            } finally {
-                if ( session != null ) session.close();
-            }
-        } catch (RuntimeException e) {
-            throw new RuntimeException("Could not delete entity: " + entity + " due to: " + e);
-        }
+        this.getCurrentSession().delete(entity);
+        return entity;
     }
 
     @SuppressWarnings("unchecked")
     public T findById(Serializable id) {
-        try {
-            Session session = this.openSession();
-            try {
-                session.beginTransaction();
-                try {
-                    T entity = (T) session.get(clazz, id);
-                    session.getTransaction().commit();
-                    return entity;
-                } catch (RuntimeException e) {
-                    session.getTransaction().rollback();
-                    throw e;
-                }
-            } finally {
-                if ( session != null ) session.close();
-            }
-        } catch (RuntimeException e) {
-            throw new RuntimeException("Could not find entity by id=" + id + " due to: " + e);
-        }
+        return (T) this.getCurrentSession().get(clazz, id);
     }
 
     @SuppressWarnings("unchecked")
     public T findOne(String hqlQuery, Object... parameters) {
-        try {
-            Session session = this.openSession();
-            try {
-                session.beginTransaction();
-                try {
-                    Query query = session.createQuery(hqlQuery);
-                    if ( parameters != null ) {
-                        for (int i=0; i<parameters.length; i++) {
-                            query.setParameter(i, parameters[i]);
-                        }
-                    }
-                    session.getTransaction().commit();
-                    return (T) query.uniqueResult();
-                } catch (RuntimeException e) {
-                    session.getTransaction().rollback();
-                    throw e;
-                }
-            } finally {
-                if ( session != null ) session.close();
+        Query query = this.getCurrentSession().createQuery(hqlQuery);
+        if (parameters != null) {
+            for (int i = 0; i < parameters.length; i++) {
+                query.setParameter(i, parameters[i]);
             }
-        } catch (RuntimeException e) {
-            throw new RuntimeException("Could not find an entity: " + hqlQuery + " due to: " + e);
         }
+        return (T) query.uniqueResult();
     }
 
     @SuppressWarnings("unchecked")
     public List<T> findAll(String hqlQuery, Object... parameters) {
-        try {
-            Session session = this.openSession();
-            try {
-                session.beginTransaction();
-                try {
-                    Query query = session.createQuery(hqlQuery);
-                    if ( parameters != null ) {
-                        for (int i=0; i<parameters.length; i++) {
-                            query.setParameter(i, parameters[i]);
-                        }
-                    }
-                    session.getTransaction().commit();
-                    return query.list();
-                } catch (RuntimeException e) {
-                    session.getTransaction().rollback();
-                    throw e;
-                }
-            } finally {
-                if ( session != null ) session.close();
+        Query query = this.getCurrentSession().createQuery(hqlQuery);
+        if (parameters != null) {
+            for (int i = 0; i < parameters.length; i++) {
+                query.setParameter(i, parameters[i]);
             }
-        } catch (RuntimeException e) {
-            e.printStackTrace();
-            throw new RuntimeException("Could not find all entities entity: " + hqlQuery + " due to: " + e);
         }
+        return query.list();
     }
 
 }

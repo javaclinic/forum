@@ -2,15 +2,14 @@ package example.forum.dao;
 
 import java.util.List;
 
-import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Repository;
 
 import example.forum.domain.Category;
 
+@Repository
 public class CategoryDaoHibernateImpl extends GenericDaoHibernateImpl<Category> implements CategoryDao  {
 
-    public CategoryDaoHibernateImpl(SessionFactory sessionFactory) {
-        super();
-        this.sessionFactory = sessionFactory;
+    public CategoryDaoHibernateImpl() {
         setClazz(Category.class);
     }
 
